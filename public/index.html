@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flight Search</title>
+</head>
+<body>
+    
+    <form action="/flights" method="post" class="container" id="flightForm">
+        <h1>Uçuş Arama Uygulaması</h1>
+        <label for="one-way">One Way:</label>
+        <input type="checkbox" id="one-way" onchange="handleOneWayChange()" />
+      
+      
+        <div class="search-box">
+
+        <label for="departure">From:</label>
+        <input
+          type="text"
+          id="departure"
+          placeholder="Istanbul (IST)"
+          oninput="showAirportList('departure', this.value)"
+          
+         
+        />
+        <ul id="departure-list" class="autocomplete-list"></ul>
+
+        <label for="arrival">To:</label>
+        <input 
+            type="text" 
+            id="arrival" 
+            placeholder="New York (JFK)" 
+            oninput="showAirportList('arrival', this.value)"
+
+        />
+
+        <ul id="arrival-list" class="autocomplete-list"></ul>
+
+        <label for="departure-date">Depart Date:</label>
+        <input type="date" id="departure-date" />
+
+        <label for="arrival-date">Return Date:</label>
+        <input type="date" id="arrival-date" />
+
+        <button id="search-button">Search</button>
+    </form>
+    <div id="loading" class="loading hidden">Loading...</div>
+    <div id="result"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

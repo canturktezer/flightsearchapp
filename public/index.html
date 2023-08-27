@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@300;400;700&family=Ysabeau+SC:wght@900&display=swap"
+      rel="stylesheet"
+    />
     <title>Flight Search</title>
-</head>
-<body>
-    
-    <form action="/flights" method="post" class="container" id="flightForm">
-        <h1>Uçuş Arama Uygulaması</h1>
-        <label for="one-way">One Way:</label>
-        <input type="checkbox" id="one-way" onchange="handleOneWayChange()" />
-      
-      
-        <div class="search-box">
+  </head>
+  <body>
+    <div id="myDiv" class="myDiv">
+      <form action="/flights" method="post" class="container" id="flightForm">
+        <h1>Flight Search Application</h1>
+        <div class="oneWay">
+          <label for="one-way">One Way:</label>
+          <input type="checkbox" id="one-way" onchange="handleOneWayChange()" />
+        </div>
 
-        <label for="departure">From:</label>
-        <input
-          type="text"
-          id="departure"
-          placeholder="Istanbul (IST)"
-          oninput="showAirportList('departure', this.value)"
-          
-         
-        />
-        <ul id="departure-list" class="autocomplete-list"></ul>
+        <div class="big-box">
+          <div class="search-box">
+            <label for="departure">From:</label>
+            <input
+              type="text"
+              id="departure"
+              placeholder="Istanbul (IST)"
+              oninput="showAirportList('departure', this.value)"
+            />
+            <ul id="departure-list" class="autocomplete-list"></ul>
 
-        <label for="arrival">To:</label>
-        <input 
-            type="text" 
-            id="arrival" 
-            placeholder="New York (JFK)" 
-            oninput="showAirportList('arrival', this.value)"
+            <label for="departure-date">Depart:</label>
+            <input type="date" id="departure-date" />
+          </div>
 
-        />
+          <div class="date-box">
+            <label for="arrival">To:</label>
+            <input
+              type="text"
+              id="arrival"
+              placeholder="New York (JFK)"
+              oninput="showAirportList('arrival', this.value)"
+            />
 
-        <ul id="arrival-list" class="autocomplete-list"></ul>
+            <ul id="arrival-list" class="autocomplete-list"></ul>
 
-        <label for="departure-date">Depart Date:</label>
-        <input type="date" id="departure-date" />
-
-        <label for="arrival-date">Return Date:</label>
-        <input type="date" id="arrival-date" />
+            <label id="arrival-date-label" for="arrival-date" style="color: #fff;">Return:</label>
+            <input type="date" id="arrival-date" />
+          </div>
+        </div>
 
         <button id="search-button">Search</button>
-    </form>
-    <div id="loading" class="loading hidden">Loading...</div>
-    <div id="result"></div>
 
+        
+      </form>
+    </div>
+    <div id="loading" class="loading hidden">Loading...</div>
+    <div id="result" class="result">
+        <select class="sort-select" id="sort-select">
+            <option value="" selected>Select Filter</option>
+            <option value="asc">Price (Low to High)</option>
+            <option value="desc">Price (Hight to Low)</option>
+            <option value="departure">Early Departure</option>
+            <option value="return">Early Return</option>
+          </select>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

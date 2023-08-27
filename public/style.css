@@ -1,104 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .search-box {
-    margin-top: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="date"] {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* ... Diğer stiller ... */
-  
-  .autocomplete-list {
-    position: absolute;
-    z-index: 1; /* Diğer içeriklerin üzerine gelmesini sağlar */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border: none;
-    border-radius: 0 0 5px 5px;
-    width: 400px;
-    max-height: 150px;
-    overflow-y: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .autocomplete-list li {
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .autocomplete-list li:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .flightDetails {
-    display: flex;
-    flex-direction: column;
-  }
-  
+  background-color: #f1f1f1;
+}
+
+.myDiv {
+  font-family: Arial, sans-serif;
+  background-color: #072e33;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 40vh;
+  width: 100%;
+  border-radius: 0px 0px 12px 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+.container {
+  padding: 20px;
+}
+
+.big-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.search-box {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form > button {
+  background-color: #00151a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 98%;
+}
+
+form > button:hover {
+  background-color: #00151a;
+}
+
+.autocomplete-list {
+  position: absolute;
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  width: 400px;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-list li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.autocomplete-list li:hover {
+  background-color: #f5f5f5;
+}
+
 label {
   display: inline-block;
 }
-
-/* public/styles.css */
 
 .loading {
   display: block;
   text-align: center;
   padding: 10px;
   background-color: #f1f1f1;
+  color: #333;
+  width: 100%;
+  border-radius: 0px 0px 12px 12px;
 }
 
 .hidden {
   display: none;
+}
+
+.result {
+  color: rgb(202, 16, 16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort-select {
+  display: none;
+  background-color: #072e33;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-bottom: 25px;
+  border-radius: 0px 0px 16px 16px;
+  text-align: center;
+  width: 160px;
+}
+
+.sort-select option {
+  background-color: #072e33;
+  color: white;
+  padding: 10px;
+  width: 160px;
+  text-align: start;
+}
+
+.flightDetails {
+  display: flex;
+  background-color: white;
+  border: 1px solid #0000001c;
+  padding: 25px;
+  width: 570px;
+  margin-top: 12px;
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+.flightDetails-return {
+  display: flex;
+  background-color: white;
+  border: 1px solid #0000001c;
+  padding: 25px;
+  width: 570px;
+  margin-top: 12px;
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+.priceBtn {
+  background-color: #00151a;
+  color: white;
+  font-weight: 800;
+  width: 72px;
+  border-radius: 50px;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .big-box {
+    flex-direction: column;
+    align-items: center;
+  }
 }

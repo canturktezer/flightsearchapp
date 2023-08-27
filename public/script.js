@@ -86,7 +86,7 @@ function displayOneWayFlight(item) {
   flightDiv.className = "flightDetails";
   flightDiv.innerHTML = `
     <div class="display-flight">
-      <div><strong>${item.airline} (${item.departureCityCode} to ${item.arrivalCityCode})</strong></div>
+      <div>Departure: <br><strong>${item.airline} (${item.departureCityCode} to ${item.arrivalCityCode})</strong></div>
       <div class="black-text">Departure Time: ${item.departureTime} - Arrival Time: ${item.arrivalTime} (Duration: ${item.duration} hours)</div>
       <button class="priceBtn">${item.price}$</button>
     </div>
@@ -99,7 +99,7 @@ function displayReturnFlight(item) {
   flightDivReturn.className = "flightDetails-return";
   flightDivReturn.innerHTML = `
     <div class="display-flight-return">
-      <div><strong>${item.airline} (${item.arrivalCityCode} to ${item.departureCityCode})</strong></div>            
+      <div>Return: <br><strong>${item.airline} (${item.arrivalCityCode} to ${item.departureCityCode})</strong></div>            
       <div class="black-text">Departure Time: ${item.returnDepartureTime} - Arrival Time: ${item.returnArrivalTime} (Duration: ${item.duration} hours)</div>
       <button class="priceBtn">${item.returnPrice}$</button>
     </div>

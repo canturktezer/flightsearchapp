@@ -173,8 +173,9 @@ label {
   margin-top: 8px;
 }
 
-
-
+.black-text {
+  color: black;
+}
 
 @media (max-width: 600px) {
   .big-box {

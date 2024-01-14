@@ -1,0 +1,79 @@
+@import "../../style.scss";
+
+.ball-container {
+  @include themify($themes) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: themed("bg");
+    z-index: 999;
+
+    .ball {
+      width: 60px;
+      height: 60px;
+      background-color: transparent;
+
+      position: relative;
+
+      .small-ball {
+        width: 15px;
+        height: 15px;
+        background-color: themed("bgSoft");
+        border-radius: 50%;
+        position: absolute;
+        transform-origin: center;
+        animation: rotate 10s linear infinite;
+      }
+
+      .small-ball:nth-child(1) {
+        animation-delay: -1s;
+      }
+
+      .small-ball:nth-child(2) {
+        animation-delay: -2s;
+      }
+
+      .small-ball:nth-child(3) {
+        animation-delay: -3s;
+      }
+
+      .small-ball:nth-child(4) {
+        animation-delay: -4s;
+      }
+
+      .small-ball:nth-child(5) {
+        animation-delay: -5s;
+      }
+
+      .small-ball:nth-child(6) {
+        animation-delay: -6s;
+      }
+
+      .small-ball:nth-child(7) {
+        animation-delay: -7s;
+      }
+
+      .small-ball:nth-child(8) {
+        animation-delay: -8s;
+      }
+
+      .small-ball:nth-child(9) {
+        animation-delay: -9s;
+      }
+
+      .small-ball:nth-child(10) {
+        animation-delay: -10s;
+      }
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg) translate(40px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translate(40px) rotate(-360deg);
+    }
+  }
+}

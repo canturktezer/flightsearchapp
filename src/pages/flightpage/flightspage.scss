@@ -1,0 +1,7 @@
+@import "../../style.scss";
+
+.flight-bg {
+  @include themify($themes) {
+    background: themed("bg");
+  }
+}

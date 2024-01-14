@@ -1,0 +1,72 @@
+@import "../../style.scss";
+
+.search {
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: themed(bgSoft);
+    object-fit: cover;
+    color: themed("textColor");
+    padding: 20px;
+    height: 350px;
+    box-shadow: 0px 17px 15px -3px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0px 17px 15px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 17px 15px -3px rgba(0, 0, 0, 1);
+    z-index: 999;
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+
+      .oneWay {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .input-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        gap: 30px;
+
+        .input-group {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          label {
+            margin-bottom: 5px;
+          }
+
+          input[type="text"],
+          input[type="date"] {
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .search-button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        color: themed(textColor);
+        font-weight: 700;
+        background-color: themed(cardBtm);
+        cursor: pointer;
+      }
+    }
+  }
+  .deneme {
+    position: absolute;
+  }
+}

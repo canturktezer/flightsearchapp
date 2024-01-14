@@ -1,0 +1,61 @@
+@import "../../style.scss";
+
+.suggestions {
+  @include themify($themes) {
+    background-color: themed("bg");
+    color: #000;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    overflow-y: auto;
+    width: 100%;
+
+    li {
+      padding: 12px;
+      border-bottom: 1px solid rgb(222, 222, 222);
+      cursor: pointer;
+    }
+
+    li:hover {
+      background: #eeeeee;
+    }
+  }
+}
+
+.suggestions-departure {
+  @include themify($themes) {
+    background-color: themed("bg");
+    color: themed("textColor");
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 445px;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    overflow-y: auto;
+    width: 19%;
+
+    li {
+      padding: 12px;
+      border-bottom: 1px solid rgb(222, 222, 222);
+      cursor: pointer;
+    }
+
+    li:hover {
+      background: #000;
+    }
+  }
+}

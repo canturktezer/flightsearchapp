@@ -1,0 +1,65 @@
+@import "../../style.scss";
+
+.services {
+  @include themify($themes) {
+    background-color: themed("bg");
+    padding: 60px 70px;
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+
+      .service {
+        display: flex;
+        flex-direction: column;
+        background-color: themed("bgSoft");
+        gap: 12px;
+        width: 465px;
+        border: none;
+        border-radius: 0.25rem;
+
+        h3 {
+          padding: 15px 15px 0 15px;
+          text-align: left;
+          color: themed("textColor");
+        }
+
+        img {
+          width: 100%;
+          height: 300px;
+          border-radius: 0.25rem 0.25rem 0 0;
+        }
+
+        span {
+          padding: 15px;
+          text-align: left;
+          color: themed("textColor");
+        }
+
+        .button {
+          display: flex;
+          justify-content: flex-start;
+
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            left: 16px;
+            bottom: 12px;
+            background: themed("cardBtm");
+            width: 30%;
+            padding: 12px;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            border-radius: 0.25rem;
+            color: themed("textColor");
+          }
+        }
+      }
+    }
+  }
+}
